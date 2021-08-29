@@ -1,6 +1,10 @@
 $(function(){
 
+    //variável para a conversão ------------
+
     let errorMessage = 'Combinação inválida. Não foi possível calcular'
+
+    //funções para a conversão ------------
 
     function mToKm (kilom) {
         return (kilom / 3.6).toFixed(2)
@@ -25,6 +29,8 @@ $(function(){
     $('input[type=text]').focus(function() {
         reset($(this))
     })
+
+    //ação para a conversão ------------
 
     $('#convert').submit(function (e) { 
         e.preventDefault();
