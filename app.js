@@ -1,6 +1,6 @@
 $(function(){
 
-    let errorMessege = 'Combinação inválida. Não foi possível calcular'
+    let errorMessage = 'Combinação inválida. Não foi possível calcular'
 
     function mToKm (kilom) {
         return (kilom / 3.6).toFixed(2)
@@ -11,7 +11,15 @@ $(function(){
     }
 
     function reset(el) {
-        el.val('')
+        el.css('border', '1px solid #000');
+        el.css('color', 'black');
+        el.val('');
+    }
+
+    function error(el, message) {
+        el.css('border', '1px solid red');
+        el.css('color', 'red');
+        el.val(message);
     }
 
     $('input[type=text]').focus(function() {
@@ -31,6 +39,11 @@ $(function(){
             //  mVerification = false;
              $('#m').val(mToKm(km));
              $('#paragraph').text(`${km} km/h equivale a ${mToKm(km)} m/s`)
+             $('#explain').text(`A conta feita foi: ${km} / 3,6`)
+             $('input[type=text]').click(function() {
+                $('#paragraph').text(`Insira um valor`)
+                $('#explain').text('')
+             })
              //console.log('certo1')
              
         } else if (m > 0 && km == '') {
@@ -38,14 +51,27 @@ $(function(){
             // kmVerification = false;
             $('#km').val(kmToM(m));
             $('#paragraph').text(`${m} m/s equivale a ${kmToM(m)} km/h`)
+            $('#explain').text(`A conta feita foi: ${m} X 3,6`)
+            $('input[type=text]').click(function() {
+                $('#paragraph').text(`Insira um valor`)
+                $('#explain').text('')
+             })
             //console.log('certo2')
 
         } else if (m > 0 && km > 0) {
-            alert(errorMessege)
+            error($('input[type=text]'), 'Inválido')
+            $('#paragraph').text(errorMessage)
+            $('input[type=text]').click(function() {
+                $('#paragraph').text(`Insira um valor`)
+             })
             //console.log('certo3')
 
         } else if (m == '' && km == '') {
-            alert(errorMessege)
+            error($('input[type=text]'), 'Elemento faltando')
+            $('#paragraph').text(errorMessage)
+            $('input[type=text]').click(function() {
+                $('#paragraph').text(`Insira um valor`)
+             })
             //console.log('certo4')
             
         }
