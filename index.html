@@ -9,13 +9,20 @@
 </head>
 <body>
 
+    <header class="mainTitle">
+        <h1>Sistema de Mecânica</h1>
+    </header>
 
     <section class="convert">
         <h1>Conversor de m/s para km/h</h1>
         <form id="convert">
-            <input type="text" id="m"><span>m/s</span>
-            <span> ------ </span>
-            <input type="text" id="km"><span>km/h</span>
+            <div class="flexItem">
+                <input type="text" id="m"><span>m/s</span>
+            </div>
+            <!-- <span> ------ </span> -->
+            <div class="flexItem">
+                <input type="text" id="km"><span>km/h</span>
+            </div>
             <input type="submit" value="Calcular">
         </form><!--convert-->
         <p id="paragraph">Insira um valor</p>

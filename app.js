@@ -11,13 +11,13 @@ $(function(){
     }
 
     function reset(el) {
-        el.css('border', '1px solid #000');
+        //el.css('border', '1px solid #000');
         el.css('color', 'black');
         el.val('');
     }
 
     function error(el, message) {
-        el.css('border', '1px solid red');
+        //el.css('border', '1px solid red');
         el.css('color', 'red');
         el.val(message);
     }
