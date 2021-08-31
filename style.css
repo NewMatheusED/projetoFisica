@@ -6,6 +6,16 @@
     user-select: none;
 }
 
+:root {
+    --mainBg: rgb(30, 30, 30);
+    --black: #000;
+    --white: #fff;
+    --gray: #ccc;
+    --bg1: rgb(167, 167, 167);
+    --inputBg: rgb(236, 236, 236);
+    
+}
+
 html, body {
     width: 100%;
 }
@@ -14,11 +24,11 @@ html, body {
     width: 100%;
     height: auto;
     padding: 25px;
-    background-color: rgb(30, 30, 30)
+    background-color: var(--mainBg);
 }
 
 .mainTitle h1 {
-    color: #fff;
+    color: var(--textColor);
     text-align: center;
     text-transform: uppercase;
 }
@@ -26,7 +36,7 @@ html, body {
 .convert {
     padding: 30px;
     height: auto;
-    background-color: rgb(167, 167, 167)
+    background-color: var(--bg1)
 }
 
 .convert h1 {
@@ -45,13 +55,13 @@ html, body {
     user-select: auto;
     margin-bottom: 10px;
     padding: 6px 5px 5px 5px;
-    background-color: rgb(236, 236, 236);
+    background-color: var(--inputBg);
     border: none;
-    border-right: 1px solid black;
+    border-right: 1px solid var(--black);
 }
 
 #convert .flexItem span {
-    background-color: #fff;
+    background-color: var(--white);
     padding: 5px;
     border-radius: 0 10px 10px 0;
 }
@@ -74,6 +84,6 @@ html, body {
     padding: 5px;
     border-radius: 10px;
     text-align: center;
-    background-color: #ccc;
+    background-color: var(--gray);
     width: max-content;
 }
