@@ -28,7 +28,7 @@ html, body {
 }
 
 .mainTitle h1 {
-    color: var(--textColor);
+    color: var(--white);
     text-align: center;
     text-transform: uppercase;
 }
