@@ -2,7 +2,11 @@ $(function(){
 
     // variável para a conversão ------------
 
-    let errorMessage = 'Combinação inválida. Não foi possível calcular'
+    let errorMessage = 'Combinação inválida. Não foi possível calcular';
+    let incognita1;
+    let incognita2;
+    let incognita3;
+    let incognita4;
 
     // funções para a conversão ------------
 
@@ -79,6 +83,7 @@ $(function(){
         } else if (m > 0 && km > 0) {
             error($('input[type=text]'), 'Inválido')
             $('#paragraph').text(errorMessage)
+            $('#explain').text('')
             // $('input[type=text]').click(function() {
             //     $('#paragraph').text(`Insira um valor`)
             //  })
@@ -87,6 +92,7 @@ $(function(){
         } else if (m == '' && km == '') {
             error($('input[type=text]'), 'Elemento faltando')
             $('#paragraph').text(errorMessage)
+            $('#explain').text('')
             // $('input[type=text]').click(function() {
             //     $('#paragraph').text(`Insira um valor`)
             //  })
@@ -94,5 +100,45 @@ $(function(){
             
         }
         
+    });
+
+    $('.ig1').click(function() {
+        if($('.ig1 input[type="checkbox"]').is(":checked")) {
+           incognita1 = true;
+        }else{
+           incognita1 = false;
+        }
+    });
+
+    $('.ig2').click(function() {
+        if($('.ig2 input[type="checkbox"]').is(":checked")) {
+           incognita2 = true;
+        }else{
+           incognita2 = false;
+        }
+    });
+
+    $('.ig3').click(function() {
+        if($('.ig3 input[type="checkbox"]').is(":checked")) {
+           incognita3 = true;
+        }else{
+           incognita3 = false;
+        }
+    });
+
+    $('.ig4').click(function() {
+        if($('.ig4 input[type="checkbox"]').is(":checked")) {
+           incognita4 = true;
+        }else{
+           incognita4 = false;
+        }
+    });
+
+    $('.test').click(function() {
+        if(incognita1) {
+            alert('marcado')
+        }else{
+            alert('não marcado')
+        }
     });
 })  
