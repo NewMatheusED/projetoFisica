@@ -33,27 +33,33 @@
     <section class="MRU">
         <h1>Movimento Retilíneo Uniforme</h1>
 
-        <h3>Selecionea incógnita da questão:</h3>
+        <h3>Selecionea incógnita da questão (apenas uma):</h3>
         <div class="inputSelector">
-            <input type="radio" name="ig1" id="ig1">
+            <div class="ig1"><input id="ig1" name=ig type="radio"></div>
             <span class="nameig">S (Espaço Final)</span>
         </div><!--inputSelector-->
 
         <div class="inputSelector">
-            <input type="radio" name="ig1" id="ig1">
+            <div class="ig2"><input id="ig2" name=ig type="radio"></div>
             <span class="nameig">So (Espaço Inicial)</span>
         </div><!--inputSelector-->
 
         <div class="inputSelector">
-            <input type="radio" name="ig1" id="ig1">
+            <div class="ig3"><input id="ig3" name=ig type="radio"></div>
             <span class="nameig">V (Velocidade)</span>
         </div><!--inputSelector-->
 
         <div class="inputSelector">
-            <input type="radio" name="ig1" id="ig1">
+            <div class="ig4"><input id="ig4" name=ig type="radio"></div>
             <span class="nameig">T (Tempo)</span>
         </div><!--inputSelector-->
+
+        <div class='dinamic-input'></div>
+
+        <input class='test' type='submit' value="Testar">
+
     </section>
+
 
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

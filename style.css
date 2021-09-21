@@ -36,7 +36,8 @@ html, body {
 .convert {
     padding: 30px;
     height: auto;
-    background-color: var(--bg1)
+    background-color: var(--bg1);
+    border-bottom: 3px solid var(--black);
 }
 
 .convert h1 {
@@ -86,4 +87,19 @@ html, body {
     text-align: center;
     background-color: var(--gray);
     width: max-content;
+}
+
+.MRU {
+    text-align: center;
+    background-color: var(--bg1)
+}
+
+.inputSelector {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.dinamic-input {
+    margin-top: 20px;
 }

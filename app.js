@@ -2,7 +2,11 @@ $(function(){
 
     // variável para a conversão ------------
 
-    let errorMessage = 'Combinação inválida. Não foi possível calcular'
+    let errorMessage = 'Combinação inválida. Não foi possível calcular';
+    let incognita1;
+    let incognita2;
+    let incognita3;
+    let incognita4;
 
     // funções para a conversão ------------
 
@@ -79,6 +83,7 @@ $(function(){
         } else if (m > 0 && km > 0) {
             error($('input[type=text]'), 'Inválido')
             $('#paragraph').text(errorMessage)
+            $('#explain').text('')
             // $('input[type=text]').click(function() {
             //     $('#paragraph').text(`Insira um valor`)
             //  })
@@ -87,6 +92,7 @@ $(function(){
         } else if (m == '' && km == '') {
             error($('input[type=text]'), 'Elemento faltando')
             $('#paragraph').text(errorMessage)
+            $('#explain').text('')
             // $('input[type=text]').click(function() {
             //     $('#paragraph').text(`Insira um valor`)
             //  })
@@ -94,5 +100,79 @@ $(function(){
             
         }
         
+    });
+
+     $('.ig1').click(function() {
+        $('#ig2').prop('checked', false);
+        $('#ig3').prop('checked', false);
+        $('#ig4').prop('checked', false);
+        if($('#ig1').prop('checked')) {
+           incognita1 = true;
+           $('.dinamic-input').html('<h3>Insira os valores da questão:</h3><br /><input type="text" placeholder="Espaço inicial"><input type="text" placeholder="Velocidade"><input type="text" placeholder="Tempo">');
+        }
+     });
+
+     $('.ig2').click(function() {
+        $('.ig1 input[type="radio"]').prop("checked", false);
+        $('#ig3').prop('checked', false);
+        $('#ig4').prop('checked', false);
+        if($('#ig2').prop('checked')) {
+           incognita2 = true;
+           $('.dinamic-input').html('<h3>Insira os valores da questão:</h3><br /><input type="text" placeholder="Espaço Final"><input type="text" placeholder="Velocidade"><input type="text" placeholder="Tempo">');
+        }
+     });
+
+     $('.ig3').click(function() {
+        $('#ig1').prop('checked', false);
+        $('#ig2').prop('checked', false);
+        $('#ig4').prop('checked', false);
+        if($('#ig3').prop('checked')) {
+           incognita3 = true;
+           $('.dinamic-input').html('<h3>Insira os valores da questão:</h3><br /><input class="S" type="text" placeholder="Espaço Final"><input class="So" type="text" placeholder="Espaço Inicial"><input class="T" type="text" placeholder="Tempo">');
+        }
+     });
+
+     $('.ig4').click(function() {
+        $('#ig1').prop('checked', false);
+        $('#ig2').prop('checked', false);
+        $('#ig3').prop('checked', false);
+        if($('#ig4').prop('checked')) {
+           incognita4 = true;
+           $('.dinamic-input').html('<h3>Insira os valores da questão:</h3><br /><input type="text" placeholder="Espaço Final"><input type="text" placeholder="Espaço Inicial"><input type="text" placeholder="Velocidade">');
+        }
+     });
+
+     if($('#ig1').prop('checked', false)){
+        incognita1 = false;
+        $('.dinamic-input').html('');
+     }
+
+     if($('#ig2').prop('checked', false)){
+        incognita2 = false;
+        $('.dinamic-input').html('');
+     }
+
+     if($('#ig3').prop('checked', false)){
+        incognita3 = false;
+        $('.dinamic-input').html('');
+     }
+
+     if($('#ig4').prop('checked', false)){
+        incognita4 = false;
+        $('.dinamic-input').html('');
+     }
+
+    $('.test').click(function() {
+        if(incognita1) {
+            alert('marcado1')
+        }else if(incognita2){
+            alert('marcado2')
+        }else if(incognita3){
+            alert('marcado3')
+        }else if(incognita4){
+            alert('marcado4')
+        }else {
+            alert('marque alguma incógnita')
+        }
     });
 })  
