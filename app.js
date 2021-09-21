@@ -102,6 +102,7 @@ $(function(){
         
     });
 
+
      $('.ig1').click(function() {
         $('#ig2').prop('checked', false);
         $('#ig3').prop('checked', false);
@@ -174,5 +175,46 @@ $(function(){
         }else {
             alert('marque alguma incógnita')
         }
+    })
+
+    $('.ig1').click(function() {
+        if($('.ig1 input[type="checkbox"]').is(":checked")) {
+           incognita1 = true;
+        }else{
+           incognita1 = false;
+        }
     });
-})  
+
+    $('.ig2').click(function() {
+        if($('.ig2 input[type="checkbox"]').is(":checked")) {
+           incognita2 = true;
+        }else{
+           incognita2 = false;
+        }
+    });
+
+    $('.ig3').click(function() {
+        if($('.ig3 input[type="checkbox"]').is(":checked")) {
+           incognita3 = true;
+        }else{
+           incognita3 = false;
+        }
+    });
+
+    $('.ig4').click(function() {
+        if($('.ig4 input[type="checkbox"]').is(":checked")) {
+           incognita4 = true;
+        }else{
+           incognita4 = false;
+        }
+    });
+
+    $('.test').click(function() {
+        if(incognita1) {
+            alert('marcado')
+        }else{
+            alert('não marcado')
+
+        }
+    }); 
+})
