@@ -104,64 +104,76 @@ $(function(){
 
 
      $('.ig1').click(function() {
-        $('#ig2').prop('checked', false);
-        $('#ig3').prop('checked', false);
-        $('#ig4').prop('checked', false);
-        if($('#ig1').prop('checked')) {
+        $('#ig2').not(":checked");
+        $('#ig3').not(":checked");
+        $('#ig4').not(":checked");
+        if($('#ig1').is(":checked")) {
            incognita1 = true;
-           $('.dinamic-input').html('<h3>Insira os valores da questão:</h3><br /><input type="text" placeholder="Espaço inicial"><input type="text" placeholder="Velocidade"><input type="text" placeholder="Tempo">');
+           $('.dinamic-input').html('<h3>Insira os valores da questão:</h3><br /><input class="So" type="text" placeholder="Espaço inicial"><input class="V" type="text" placeholder="Velocidade"><input class="T" type="text" placeholder="Tempo">');
+        }else{
+           incognita1 = false;
+           $('.dinamic-input').html('');
         }
      });
 
      $('.ig2').click(function() {
-        $('.ig1 input[type="radio"]').prop("checked", false);
-        $('#ig3').prop('checked', false);
-        $('#ig4').prop('checked', false);
-        if($('#ig2').prop('checked')) {
+        $('#ig1').not(":checked");
+        $('#ig3').not(":checked");
+        $('#ig4').not(":checked");
+        if($('#ig2').is(":checked")) {
            incognita2 = true;
-           $('.dinamic-input').html('<h3>Insira os valores da questão:</h3><br /><input type="text" placeholder="Espaço Final"><input type="text" placeholder="Velocidade"><input type="text" placeholder="Tempo">');
-        }
+           $('.dinamic-input').html('<h3>Insira os valores da questão:</h3><br /><input class="S" type="text" placeholder="Espaço Final"><input class="V" type="text" placeholder="Velocidade"><input class="T" type="text" placeholder="Tempo">');
+        }else{
+            incognita2 = false;
+            $('.dinamic-input').html('');
+         }
      });
 
      $('.ig3').click(function() {
-        $('#ig1').prop('checked', false);
-        $('#ig2').prop('checked', false);
-        $('#ig4').prop('checked', false);
-        if($('#ig3').prop('checked')) {
+        $('#ig1').not(":checked");
+        $('#ig2').not(":checked");
+        $('#ig4').not(":checked");
+        if($('#ig3').is(":checked")) {
            incognita3 = true;
            $('.dinamic-input').html('<h3>Insira os valores da questão:</h3><br /><input class="S" type="text" placeholder="Espaço Final"><input class="So" type="text" placeholder="Espaço Inicial"><input class="T" type="text" placeholder="Tempo">');
-        }
+        }else{
+            incognita3 = false;
+            $('.dinamic-input').html('');
+         }
      });
 
      $('.ig4').click(function() {
-        $('#ig1').prop('checked', false);
-        $('#ig2').prop('checked', false);
-        $('#ig3').prop('checked', false);
-        if($('#ig4').prop('checked')) {
+        $('#ig1').not(":checked");
+        $('#ig2').not(":checked");
+        $('#ig3').not(":checked");
+        if($('#ig4').is(":checked")) {
            incognita4 = true;
-           $('.dinamic-input').html('<h3>Insira os valores da questão:</h3><br /><input type="text" placeholder="Espaço Final"><input type="text" placeholder="Espaço Inicial"><input type="text" placeholder="Velocidade">');
-        }
+           $('.dinamic-input').html('<h3>Insira os valores da questão:</h3><br /><input class="S" type="text" placeholder="Espaço Final"><input class="So" type="text" placeholder="Espaço Inicial"><input class="V" type="text" placeholder="Velocidade">');
+        }else{
+            incognita4 = false;
+            $('.dinamic-input').html('');
+         }
      });
 
-     if($('#ig1').prop('checked', false)){
-        incognita1 = false;
-        $('.dinamic-input').html('');
-     }
+    //  if($('#ig1').checked = false){
+    //     incognita1 = false;
+    //     $('.dinamic-input').html('');
+    //  }
 
-     if($('#ig2').prop('checked', false)){
-        incognita2 = false;
-        $('.dinamic-input').html('');
-     }
+    //  if($('#ig2').checked = false){
+    //     incognita2 = false;
+    //     $('.dinamic-input').html('');
+    //  }
 
-     if($('#ig3').prop('checked', false)){
-        incognita3 = false;
-        $('.dinamic-input').html('');
-     }
+    //  if($('#ig3').checked = false){
+    //     incognita3 = false;
+    //     $('.dinamic-input').html('');
+    //  }
 
-     if($('#ig4').prop('checked', false)){
-        incognita4 = false;
-        $('.dinamic-input').html('');
-     }
+    //  if($('#ig4').checked = false){
+    //     incognita4 = false;
+    //     $('.dinamic-input').html('');
+    //  }
 
     $('.test').click(function() {
         if(incognita1) {
@@ -176,45 +188,4 @@ $(function(){
             alert('marque alguma incógnita')
         }
     })
-
-    $('.ig1').click(function() {
-        if($('.ig1 input[type="checkbox"]').is(":checked")) {
-           incognita1 = true;
-        }else{
-           incognita1 = false;
-        }
-    });
-
-    $('.ig2').click(function() {
-        if($('.ig2 input[type="checkbox"]').is(":checked")) {
-           incognita2 = true;
-        }else{
-           incognita2 = false;
-        }
-    });
-
-    $('.ig3').click(function() {
-        if($('.ig3 input[type="checkbox"]').is(":checked")) {
-           incognita3 = true;
-        }else{
-           incognita3 = false;
-        }
-    });
-
-    $('.ig4').click(function() {
-        if($('.ig4 input[type="checkbox"]').is(":checked")) {
-           incognita4 = true;
-        }else{
-           incognita4 = false;
-        }
-    });
-
-    $('.test').click(function() {
-        if(incognita1) {
-            alert('marcado')
-        }else{
-            alert('não marcado')
-
-        }
-    }); 
 })
