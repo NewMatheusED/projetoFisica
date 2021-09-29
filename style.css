@@ -79,7 +79,7 @@ html, body {
     text-align: center;
 }
 
-#paragraph, #explain {
+#paragraph, #explain, #paragraph2, #explain2 {
     display: block;
     margin: 10px auto;
     padding: 5px;

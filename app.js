@@ -30,7 +30,7 @@ $(function(){
         el.val(message);
     }
 
-    $('input[type=text]').focus(function() {
+    $('#m, #km').focus(function() {
         reset($(this))
     })
 
@@ -113,6 +113,8 @@ $(function(){
         }else{
            incognita1 = false;
            $('.dinamic-input').html('');
+           $('#paragraph2').text('');
+            $('#explain2').text('');
         }
      });
 
@@ -126,6 +128,8 @@ $(function(){
         }else{
             incognita2 = false;
             $('.dinamic-input').html('');
+            $('#paragraph2').text('');
+            $('#explain2').text('');
          }
      });
 
@@ -139,6 +143,8 @@ $(function(){
         }else{
             incognita3 = false;
             $('.dinamic-input').html('');
+            $('#paragraph2').text('');
+            $('#explain2').text('');
          }
      });
 
@@ -152,6 +158,8 @@ $(function(){
         }else{
             incognita4 = false;
             $('.dinamic-input').html('');
+            $('#paragraph2').text('');
+            $('#explain2').text('');
          }
      });
 
@@ -186,7 +194,8 @@ $(function(){
                 var case3 = parseInt($('.T').val());
                 pass = case2 * case3;
                 pass = case1 + pass;
-                console.log(pass)
+                $('#paragraph2').text(`S = ${case1} + ${case2} * ${case3}`)
+                $('#explain2').text(`S = ${pass}`)
                 break;
             // default:
             //     alert('diferente de 1 marcado')
@@ -201,7 +210,40 @@ $(function(){
                 var case3 = parseInt($('.T').val());
                 pass = case2 * case3;
                 pass = case1 - pass;
-                console.log(pass)
+                $('#paragraph2').text(`${case1} = So + ${case2} * ${case3}`)
+                $('#explain2').text(`So = ${pass}`)
+                break;
+            // default:
+            //     alert('diferente de 2 marcado')
+            //     break;
+        }
+
+        switch (incognita3) {
+            case true:
+                var pass;
+                var case1 = parseInt($('.S').val());
+                var case2 = parseInt($('.So').val());
+                var case3 = parseInt($('.T').val());
+                pass =  case1 - case2
+                pass = pass / case3
+                $('#paragraph2').text(`${case1} = ${case2} + V * ${case3}`)
+                $('#explain2').text(`V = ${pass}`)
+                break;
+            // default:
+            //     alert('diferente de 2 marcado')
+            //     break;
+        }
+
+        switch (incognita4) {
+            case true:
+                var pass;
+                var case1 = parseInt($('.S').val());
+                var case2 = parseInt($('.So').val());
+                var case3 = parseInt($('.V').val());
+                pass = case1 - case2
+                pass = pass / case3
+                $('#paragraph2').text(`${case1} = ${case2} + ${case3} * T`)
+                $('#explain2').text(`T = ${pass}`)
                 break;
             // default:
             //     alert('diferente de 2 marcado')
