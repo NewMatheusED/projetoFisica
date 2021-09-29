@@ -103,3 +103,19 @@ html, body {
 .dinamic-input {
     margin-top: 20px;
 }
+
+.So {
+    border: 2px solid red;
+}
+
+.V {
+    border: 2px solid blue;
+}
+
+.T {
+    border: 2px solid green;
+}
+
+.S {
+    border: 2px solid yellow;
+}
