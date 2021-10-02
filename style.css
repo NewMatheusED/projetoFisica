@@ -18,6 +18,14 @@
 
 html, body {
     width: 100%;
+    background: var(--bg1)
+}
+
+hr {
+    background-color: var(--black);
+    margin: 20px 50px;
+    height: 5px;
+    border-radius: 50%;
 }
 
 .mainTitle {
@@ -36,8 +44,6 @@ html, body {
 .convert {
     padding: 30px;
     height: auto;
-    background-color: var(--bg1);
-    border-bottom: 3px solid var(--black);
 }
 
 .convert h1 {
@@ -91,7 +97,13 @@ html, body {
 
 .MRU {
     text-align: center;
-    background-color: var(--bg1)
+}
+
+.formula {
+    font-size: 18px;
+    color: var(--black);
+    margin-top: 10px;
+    font-weight: bold;
 }
 
 .inputSelector {
