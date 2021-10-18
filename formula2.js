@@ -12,7 +12,7 @@ $(function() {
         if($('#ig5').is(":checked")) {
            incognita1 = true;
            $('.makeFormula2').css('opacity', '1')
-           $('.dinamic-input2').html('<h3 style="color:black">Insira os valores da questão:</h3><br /><div class="flexInput"><input class="So2" type="text" placeholder="Espaço inicial"><input class="V2" type="text" placeholder="Velocidade"><input class="T2" type="text" placeholder="Tempo"><input class="A" type="text" placeholder="Aceleração"></div>');
+           $('.dinamic-input2').html('<h3 style="color:black">Insira os valores da questão:</h3><br /><div class="flexInput"><input class="So2" type="text" placeholder="Espaço inicial"><input class="V2" type="text" placeholder="Velocidade Inicial"><input class="T2" type="text" placeholder="Tempo"><input class="A" type="text" placeholder="Aceleração"></div>');
         }else{
            incognita1 = false;
            $('.makeFormula2').css('opacity', '0')
@@ -29,7 +29,7 @@ $(function() {
         if($('#ig6').is(":checked")) {
            incognita2 = true;
            $('.makeFormula2').css('opacity', '1')
-           $('.dinamic-input2').html('<h3 style="color:black">Insira os valores da questão:</h3><br /><div class="flexInput"><input class="S2" type="text" placeholder="Espaço Final"><input class="V2" type="text" placeholder="Velocidade"><input class="T2" type="text" placeholder="Tempo"><input class="A" type="text" placeholder="Aceleração"></div>');
+           $('.dinamic-input2').html('<h3 style="color:black">Insira os valores da questão:</h3><br /><div class="flexInput"><input class="S2" type="text" placeholder="Espaço Final"><input class="V2" type="text" placeholder="Velocidade Inicial"><input class="T2" type="text" placeholder="Tempo"><input class="A" type="text" placeholder="Aceleração"></div>');
         }else{
             incognita2 = false;
             $('.makeFormula2').css('opacity', '0')
@@ -63,7 +63,7 @@ $(function() {
         if($('#ig8').is(":checked")) {
            incognita4 = true;
            $('.makeFormula2').css('opacity', '1')
-           $('.dinamic-input2').html('<h3 style="color:black">Insira os valores da questão:</h3><br /><div class="flexInput"><input class="S2" type="text" placeholder="Espaço Final"><input class="So2" type="text" placeholder="Espaço Inicial"><input class="V2" type="text" placeholder="Velocidade"><input class="A" type="text" placeholder="Aceleração"></div>');
+           $('.dinamic-input2').html('<h3 style="color:black">Insira os valores da questão:</h3><br /><div class="flexInput"><input class="S2" type="text" placeholder="Espaço Final"><input class="So2" type="text" placeholder="Espaço Inicial"><input class="V2" type="text" placeholder="Velocidade Inicial"><input class="A" type="text" placeholder="Aceleração"></div>');
         }else{
             incognita4 = false;
             $('.makeFormula2').css('opacity', '0')
@@ -80,7 +80,7 @@ $(function() {
         if($('#ig9').is(":checked")) {
            incognita5 = true;
            $('.makeFormula2').css('opacity', '1')
-           $('.dinamic-input2').html('<h3 style="color:black">Insira os valores da questão:</h3><br /><div class="flexInput"><input class="S2" type="text" placeholder="Espaço Final"><input class="So2" type="text" placeholder="Espaço Inicial"><input class="V2" type="text" placeholder="Velocidade"><input class="T2" type="text" placeholder="Tempo"></div>');
+           $('.dinamic-input2').html('<h3 style="color:black">Insira os valores da questão:</h3><br /><div class="flexInput"><input class="S2" type="text" placeholder="Espaço Final"><input class="So2" type="text" placeholder="Espaço Inicial"><input class="V2" type="text" placeholder="Velocidade Inicial"><input class="T2" type="text" placeholder="Tempo"></div>');
         }else{
             incognita5 = false;
             $('.makeFormula2').css('opacity', '0')
@@ -113,16 +113,20 @@ $(function() {
     //  }
     //}
 
-    $('.makeFormula').click(function() {
+    $('.makeFormula2').click(function() {
         switch (incognita1) {
             case true:
                 var pass;
+                var pass2;
                 var case1 = parseInt($('.So2').val());
                 var case2 = parseInt($('.V2').val());
                 var case3 = parseInt($('.T2').val());
-                pass = case2 * case3;
-                pass = case1 + pass;
-                $('#paragraph3').text(`S = ${case1} + ${case2} * ${case3}`)
+                var case4 = parseInt($('.A').val());
+                pass = case1 + case2 * case3;
+                pass2 = case4 * (case3**2);
+                pass2 = pass2 / 2;
+                pass = pass + pass2;
+                $('#paragraph3').text(`S = ${case1} + ${case2} * ${case3} + (${case4} * ${case3}² / 2)`)
                 $('#explain3').text(`S = ${pass}`)
                 break;
             // default:
@@ -133,13 +137,18 @@ $(function() {
         switch (incognita2) {
             case true:
                 var pass;
+                var pass2;
                 var case1 = parseInt($('.S2').val());
                 var case2 = parseInt($('.V2').val());
                 var case3 = parseInt($('.T2').val());
-                pass = case2 * case3;
-                pass = case1 - pass;
-                $('#paragraph3').text(`${case1} = So2 + ${case2} * ${case3}`)
-                $('#explain3').text(`So2 = ${pass}`)
+                var case4 = parseInt($('.A').val());
+                pass = (case1 * -1) + case2 * case3;
+                pass2 = case4 * (case3**2);
+                pass2 = pass2 / 2;
+                pass = pass + pass2;
+                pass = pass * -1
+                $('#paragraph3').text(`${case1} = So + ${case2} * ${case3} + (${case4} * ${case3}² / 2)`)
+                $('#explain3').text(`S = ${pass}`)
                 break;
             // default:
             //     alert('diferente de 2 marcado')
