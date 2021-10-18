@@ -27,7 +27,7 @@
             <input type="submit" value="Calcular">
         </form><!--convert-->
         <div class="flexDiv">
-            <p style="color: white; font-size: 25px; font-weight: bold;">Resultado</p>
+            <p style="color: white; font-size: 25px; font-weight: bold;">Resultado:</p>
             <p id="definition"></p>
             <p id="paragraph"></p>
             <p id="explain"></p>
@@ -66,15 +66,80 @@
             <span class="nameig">T (Tempo)</span>
         </div><!--inputSelector-->
 
-        <div class='dinamic-input'></div>
-        <p id="paragraph2"></p>
-        <p id="explain2"></p>
+        <div class="flexMain">
+            <div class="group">
+                <div class='dinamic-input'></div>
+                
 
-        <input class='test' type='submit' value="Testar">
+                <input class='makeFormula' type='submit' value="Testar">
+        </div><!--group-->
 
-    </section>
+        <div class="flexDiv">
+            <p style="color: white; font-size: 25px; font-weight: bold; text-align: left;">Resultado:</p>
+            <p id="paragraph2"></p>
+            <p id="explain2"></p>
+        </div><!--flexDiv-->
+    </div><!--flexMain-->
+    </section><!--MRU-->
+
+    <hr />
+
+    <section class="MRUV">
+        <h1>Movimento Retilíneo Uniformemente Variado</h1>
+
+        <h3>Selecionea incógnita da questão (apenas uma):</h3>
+
+        <div class="formula">S= So + Vo.t + at²/2
+        </div>
+        <div class="inputSelector">
+            <!-- <div class="ig1"><input id="ig1" name=ig type="radio"></div> -->
+            <div class="ig5"><input id=ig5 type="checkbox"></div>
+            <span class="nameig">S (Espaço Final)</span>
+        </div><!--inputSelector-->
+
+        <div class="inputSelector">
+            <!-- <div class="ig2"><input id="ig2" name=ig type="radio"></div> -->
+            <div class="ig6"><input id=ig6 type="checkbox"></div>
+            <span class="nameig">So (Espaço Inicial)</span>
+        </div><!--inputSelector-->
+
+        <div class="inputSelector">
+            <!-- <div class="ig3"><input id="ig3" name=ig type="radio"></div> -->
+            <div class="ig7"><input id=ig7 type="checkbox"></div>
+            <span class="nameig">V (Velocidade)</span>
+        </div><!--inputSelector-->
+
+        <div class="inputSelector">
+            <!-- <div class="ig4"><input id="ig4" name=ig type="radio"></div> -->
+            <div class="ig8"><input id=ig8 type="checkbox"></div>
+            <span class="nameig">T (Tempo)</span>
+        </div><!--inputSelector-->
+
+        <div class="inputSelector">
+            <!-- <div class="ig4"><input id="ig4" name=ig type="radio"></div> -->
+            <div class="ig9"><input id=ig9 type="checkbox"></div>
+            <span class="nameig">A (Acelerção)</span>
+        </div><!--inputSelector-->
+
+        <div class="flexMain">
+            <div style="height: 280px;" class="group">
+                <div class='dinamic-input2'></div>
+                
+
+                <input class='makeFormula2' type='submit' value="Testar">
+        </div><!--group-->
+        
+        <div class="flexDiv">
+            <p style="color: white; font-size: 25px; font-weight: bold; text-align: left;">Resultado:</p>
+            <p id="paragraph3"></p>
+            <p id="explain3"></p>
+        </div><!--flexDiv-->
+    </div><!--flexMain-->
+    </section><!--MRUV-->
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="app.js"></script>
+    <script src="formula1.js"></script>
+    <script src="formula2.js"></script>
 </body>
 </html>

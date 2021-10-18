@@ -11,9 +11,9 @@
     --black: #000;
     --white: #fff;
     --gray: #ccc;
-    --bg1: rgb(167, 167, 167)
-;    --inputBg: rgb(236, 236, 236);
-    
+    --bg1: rgb(167, 167, 167);    
+    --inputBg: rgb(236, 236, 236);
+    --resultColor: #359b92;
 }
 
 html, body {
@@ -83,7 +83,7 @@ hr {
     border-bottom: 1px solid black;
 }
 
-#convert input[type="submit"] {
+#convert input[type="submit"], .makeFormula {
     padding: 5px;
     border: none;
     border-radius: 10px;
@@ -103,25 +103,36 @@ hr {
     text-align: center;
 }
 
-#paragraph, #explain, #paragraph2, #explain2 {
+#paragraph, #explain, #paragraph2, #explain2,#paragraph3, #explain3 {
     display: block;
     padding: 5px;
     border-radius: 10px;
     text-align: center;
     width: max-content;
     color: white;
+    font-size: 18px;
 }
 
-/* #paragraph {
-    margin: 100px auto;
+#paragraph {
+    margin-top: 50px;
 }
 
 #explain {
-    margin: -100px auto;
-} */
+    margin-top: 5px;
+    color: var(--resultColor);
+    font-size: 25px;
+}
 
+#paragraph2, #paragraph3{
+    margin-top: 50px;
+}
 
-.MRU {
+#explain2, #explain3 {
+    color: var(--resultColor);
+    font-size: 25px;
+}
+
+.MRU, .MRUV {
     text-align: center;
 }
 
@@ -138,22 +149,41 @@ hr {
     justify-content: center;
 }
 
-.dinamic-input {
-    margin-top: 20px;
+.flexMain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 50px;
 }
 
-.So {
-    border: 2px solid red;
+.group {
+    display: inline-block;
+    width: 300px;
+    height: 260px;
+    background-color: #fff;
+    padding: 20px;
 }
 
-.V {
-    border: 2px solid blue;
+.makeFormula,
+.makeFormula2 {
+    opacity: 0;
 }
 
-.T {
-    border: 2px solid green;
+.So, .V, .T, .S, .So2, .V2, .T2, .S2, .A {
+    width: 150px;
+    margin: 10px auto;
+    background-color: #ccc;
+    outline: none;
+    border: 0;
+    padding: 5px;
 }
 
-.S {
-    border: 2px solid yellow;
+/* .So, .V, .T, .S:focus {
+    border: 1px solid rgb(22, 22, 255);
+} */
+
+.flexInput {
+    display: flex;
+    flex-direction: column;
 }
