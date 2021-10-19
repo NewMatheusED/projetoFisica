@@ -161,6 +161,7 @@ $(function() {
                 var case1 = parseInt($('.S2').val());
                 var case2 = parseInt($('.So2').val());
                 var case3 = parseInt($('.T2').val());
+                var case4 = parseInt($('.A').val());
                 pass =  case1 - case2
                 pass = pass / case3
                 $('#paragraph3').text(`${case1} = ${case2} + V * ${case3}`)
@@ -177,6 +178,7 @@ $(function() {
                 var case1 = parseInt($('.S2').val());
                 var case2 = parseInt($('.So2').val());
                 var case3 = parseInt($('.V2').val());
+                var case4 = parseInt($('.A').val());
                 pass = case1 - case2
                 pass = pass / case3
                 $('#paragraph3').text(`${case1} = ${case2} + ${case3} * T`)
@@ -193,6 +195,7 @@ $(function() {
                 var case1 = parseInt($('.S2').val());
                 var case2 = parseInt($('.So2').val());
                 var case3 = parseInt($('.V2').val());
+                var case4 = parseInt($('.A').val());
                 pass = case1 - case2
                 pass = pass / case3
                 $('#paragraph3').text(`${case1} = ${case2} + ${case3} * T`)
