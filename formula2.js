@@ -148,7 +148,7 @@ $(function() {
                 pass = pass + pass2;
                 pass = pass * -1
                 $('#paragraph3').text(`${case1} = So + ${case2} * ${case3} + (${case4} * ${case3}² / 2)`)
-                $('#explain3').text(`S = ${pass}`)
+                $('#explain3').text(`So = ${pass}`)
                 break;
             // default:
             //     alert('diferente de 2 marcado')
@@ -157,15 +157,25 @@ $(function() {
 
         switch (incognita3) {
             case true:
+                var incognita = 1;
                 var pass;
+                var pass2;
+                var pass3;
                 var case1 = parseInt($('.S2').val());
                 var case2 = parseInt($('.So2').val());
                 var case3 = parseInt($('.T2').val());
                 var case4 = parseInt($('.A').val());
-                pass =  case1 - case2
-                pass = pass / case3
-                $('#paragraph3').text(`${case1} = ${case2} + V * ${case3}`)
-                $('#explain3').text(`V = ${pass}`)
+                pass = case1 * 2
+                pass2 = case2 * 2
+                incognita *= 2
+                incognita = incognita * case3
+                pass3 = case3**2
+                pass3 = pass3 * case4
+                pass3 = pass2 + pass3
+                pass = pass - pass3
+                pass = pass / incognita
+                $('#paragraph3').text(`${case1} = ${case2} + Vo * ${case3} + (${case4} * ${case3}² / 2)`)
+                $('#explain3').text(`Vo = ${pass}`)
                 break;
             // default:
             //     alert('diferente de 2 marcado')
@@ -219,3 +229,4 @@ $(function() {
         // }
     })
 })
+
