@@ -184,14 +184,40 @@ $(function() {
 
         switch (incognita4) {
             case true:
+                var incognita = 1;
+                var incognita2 = 1;
                 var pass;
+                var pass2;
+                var pass3;
+                var a;
+                var b;
+                var c;
                 var case1 = parseInt($('.S2').val());
                 var case2 = parseInt($('.So2').val());
                 var case3 = parseInt($('.V2').val());
                 var case4 = parseInt($('.A').val());
-                pass = case1 - case2
-                pass = pass / case3
-                $('#paragraph3').text(`${case1} = ${case2} + ${case3} * T`)
+                pass = case1 * 2;
+                // console.log(pass)
+                pass2 = case2 * 2;
+                // console.log(pass2)
+                incognita = case3 * incognita;
+                incognita = incognita * 2;
+                // console.log(incognita)
+                incognita2 = incognita2 * case4; //elevado ao quadrado
+                // console.log(incognita2)
+                pass = pass2 - pass;
+                // console.log(pass);
+                a = incognita2
+                b = incognita
+                c = pass
+                // console.log(a, b, c)
+                var BhaskaraDelta = (b**2) - (4 * a * c)
+                var BhaskaraX1 = (-b + Math.sqrt(BhaskaraDelta)) / (2 * a)
+                var BhaskaraX2 = (-b - Math.sqrt(BhaskaraDelta)) / (2 * a)
+                // console.log(BhaskaraDelta, BhaskaraX1, BhaskaraX2)
+                if(Number.isInteger(BhaskaraX1)){ pass = BhaskaraX1 }
+                if(Number.isInteger(BhaskaraX2)){ pass = BhaskaraX2 }
+                $('#paragraph3').text(`${case1} = ${case2} + ${case3} * T + (${case4} * T² / 2)`)
                 $('#explain3').text(`T = ${pass}`)
                 break;
             // default:
@@ -201,7 +227,10 @@ $(function() {
 
         switch (incognita5) {
             case true:
+                var incognita = 1;
                 var pass;
+                var pass2;
+                var pass3;
                 var case1 = parseInt($('.S2').val());
                 var case2 = parseInt($('.So2').val());
                 var case3 = parseInt($('.V2').val());
@@ -228,5 +257,4 @@ $(function() {
         //     alert('marque alguma incógnita')
         // }
     })
-})
-
+}) 
