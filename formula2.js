@@ -234,11 +234,30 @@ $(function() {
                 var case1 = parseInt($('.S2').val());
                 var case2 = parseInt($('.So2').val());
                 var case3 = parseInt($('.V2').val());
-                var case4 = parseInt($('.A').val());
-                pass = case1 - case2
-                pass = pass / case3
-                $('#paragraph3').text(`${case1} = ${case2} + ${case3} * T`)
-                $('#explain3').text(`T = ${pass}`)
+                var case4 = parseInt($('.T2').val());
+                
+                $('#paragraph3').text(`${case1} = ${case2} + ${case3} * ${case4} + (A * ${case4}² / 2)`)
+
+                case1 = case1 * 2
+                //console.log(case1)
+                case2 = case2 * 2
+                //console.log(case2)
+                case3 = case3 * 2
+                //console.log(case3)
+                pass = case4 * case3
+                //console.log(pass)
+                pass = pass + case2
+                //console.log(pass)
+                pass2 = case4**2
+                //console.log(pass2)
+                case1 = case1 - pass
+                //console.log(case1)
+                case1 = case1 / pass2
+                //console.log(case1)
+
+                pass = case1
+
+                $('#explain3').text(`A = ${pass}`)
                 break;
             // default:
             //     alert('diferente de 2 marcado')
